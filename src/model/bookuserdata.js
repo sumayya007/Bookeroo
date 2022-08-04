@@ -6,7 +6,7 @@ const mongoose =require('mongoose');
 // }).then(()=>{
 //     console.log('Connected to MongoDB Cloud :)');
 // })
-mongoose.connect('mongodb+srv://2WQ9IurjqctRc5zM:%3Cmymongodbatlas007%3E@cluster0.3nral.mongodb.net/test');
+mongoose.connect('mongodb+srv://2WQ9IurjqctRc5zM:mymongodbatlas@cluster0.3nral.mongodb.net/test');
 const Schema=mongoose.Schema;
 var NewUserSchema=new Schema({
     username :String,
