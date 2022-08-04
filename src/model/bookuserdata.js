@@ -1,6 +1,6 @@
 const mongoose =require('mongoose');
 // mongoose.connect('mongodb://localhost:27017/ProductDb');
-// mongoose.connect(`mongodb+srv://2WQ9IurjqctRc5zM:%3Cmymongodbatlas007%3E@cluster0.3nral.mongodb.net/test`,{
+// mongoose.connect(`mongodb+srv://2WQ9IurjqctRc5zM:%3Cmymongodbatlas007%3E@cluster0.3nral.mongodb.net/ProductDb`,{
 //     useNewUrlParser:true,
 //     useUnifiedTopology:true //this line is not mandatory
 // }).then(()=>{
