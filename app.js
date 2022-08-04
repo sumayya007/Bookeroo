@@ -9,7 +9,8 @@ var app=new express();
 app.use(cors());
 app.use(bodyparser.json());
 const path = require('path');
-app.use(express.static('./dist/ProductApp'));
+// app.use(express.static('./dist/ProductApp'));
+app.use(express.static('${__dirname}/ProductApp/dist/'));
 username="";
 password="";
 // const user={username:'',
@@ -170,9 +171,12 @@ app.delete('/api/remove/:id',(req,res)=>{
    })
  });
 
- app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist//ProductApp/index.html'));
-   });
+//  app.get('/*', function(req, res) {
+//     res.sendFile(path.join(__dirname + '/dist//ProductApp/index.html'));
+//    });
+app.get('*', (req, res) => {
+  res.sendFile(`./ProductApp/dist/index.html`); // load the single view file (angular will handle the page changes on the front-end)
+});
    
 app.listen(PORT, () => {
   console.log(`App is running on port ${ PORT }`);
