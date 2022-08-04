@@ -4,6 +4,7 @@ const BookUserData=require('./src/model/bookuserdata');
 const cors=require('cors');
 const jwt=require('jsonwebtoken');
 const bodyparser=require('body-parser');
+const PORT = process.env.PORT || 3000;
 var app=new express();
 app.use(cors());
 app.use(bodyparser.json());
@@ -173,6 +174,6 @@ app.delete('/api/remove/:id',(req,res)=>{
     res.sendFile(path.join(__dirname + '/dist//ProductApp/index.html'));
    });
    
-app.listen(3000,function(){
-    console.log("listening to port 3000");
+app.listen(PORT, () => {
+  console.log(`App is running on port ${ PORT }`);
 });
