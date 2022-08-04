@@ -10,7 +10,8 @@ app.use(cors());
 app.use(bodyparser.json());
 const path = require('path');
 // app.use(express.static('./dist/ProductApp'));
-app.use(express.static('${__dirname}/ProductApp/dist/'));
+// app.use(express.static('${__dirname}/ProductApp/dist/'));
+app.use( express.static(path.join(__dirname, '/dist/product-app')));
 username="";
 password="";
 // const user={username:'',
