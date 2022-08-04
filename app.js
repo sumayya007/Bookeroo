@@ -172,7 +172,7 @@ app.delete('/api/remove/:id',(req,res)=>{
  });
 
  app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist//ProductApp/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/product-app/index.html'));
    });
 // app.get('*', (req, res) => {
 //   res.sendFile(`./ProductApp/dist/index.html`); // load the single view file (angular will handle the page changes on the front-end)
