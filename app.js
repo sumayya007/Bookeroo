@@ -5,13 +5,13 @@ const cors=require('cors');
 const jwt=require('jsonwebtoken');
 const bodyparser=require('body-parser');
 const mongoose =require('mongoose');
-
-mongoose.connect(`process.env.MONGODB_URI||mongodb://localhost:27017/ProductDb`,{
-       useNewUrlParser:true,
-       useUnifiedTopology:true 
-  }).then(()=>{
-     console.log('Connected to MongoDB Cloud :)');
- })
+mongoose.connect('mongodb+srv://2WQ9IurjqctRc5zM:%3Cmymongodbatlas007%3E@cluster0.3nral.mongodb.net/ProductDb?retryWrites=true&w=majority');
+// mongoose.connect(`process.env.MONGODB_URI||mongodb://localhost:27017/ProductDb`,{
+//        useNewUrlParser:true,
+//        useUnifiedTopology:true 
+//   }).then(()=>{
+//      console.log('Connected to MongoDB Cloud :)');
+//  })
 const PORT = process.env.PORT || 3000;
 var app=new express();
 app.use(cors());
