@@ -4,6 +4,14 @@ const BookUserData=require('./src/model/bookuserdata');
 const cors=require('cors');
 const jwt=require('jsonwebtoken');
 const bodyparser=require('body-parser');
+const mongoose =require('mongoose');
+
+mongoose.connect(`process.env.MONGODB_URI||mongodb://localhost:27017/ProductDb`,{
+       useNewUrlParser:true,
+       useUnifiedTopology:true 
+  }).then(()=>{
+     console.log('Connected to MongoDB Cloud :)');
+ })
 const PORT = process.env.PORT || 3000;
 var app=new express();
 app.use(cors());
