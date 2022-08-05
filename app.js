@@ -97,7 +97,7 @@ app.get('/api//products',function(req,res){
       
 
  //insert book    
-    app.post('/api//insert',verifyToken,function(req,res){
+    app.post('/api//insert',function(req,res){
         console.log("inside insert");
         res.header("Access-Control-Allow-Origin","*");
         res.header('Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS');
