@@ -62,7 +62,7 @@ app.post('/api/login',(req,res)=>{
 
 
 //get products
-app.get('/api//products',function(req,res){
+app.get('/api/products',function(req,res){
     res.header("Access-Control-Allow-Origin","*");
     res.header('Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS');
     ProductData.find().then(function(products){
@@ -71,7 +71,7 @@ app.get('/api//products',function(req,res){
     });
 
  //get product by id   
-    app.get('/api//:id',  (req, res) => {
+    app.get('/api/:id',  (req, res) => {
   
         const id = req.params.id;
           ProductData.findOne({"_id":id})
@@ -86,7 +86,7 @@ app.get('/api//products',function(req,res){
     
     
  //get user by username
-  app.get('/api//getusername',  (req, res) => {
+  app.get('/api/getusername',  (req, res) => {
   
     const user = req.params.username;
     UserData.findOne({"user":user})
@@ -97,8 +97,8 @@ app.get('/api//products',function(req,res){
       
 
  //insert book    
-    app.post('/api//insert',function(req,res){
-        console.log("inside insert");
+    app.post('/api/insert',verifyToken,function(req,res){
+       
         res.header("Access-Control-Allow-Origin","*");
         res.header('Access-Control-Allow-Methods:GET,POST,PATCH,PUT,DELETE,OPTIONS');
         console.log(req.body);
@@ -153,7 +153,7 @@ app.delete('/api/remove/:id',(req,res)=>{
   });
 
 //update products
-  app.put('/apin/update',(req,res)=>{
+  app.put('/api/update',(req,res)=>{
     console.log(req.body);
     
     id=req.body._id,
